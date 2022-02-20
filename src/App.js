@@ -13,21 +13,35 @@ import ParticleBackground from './components/particleBackground';
 import TeamArchives from './pages/Home/Archives';
 import GalleryPage from './pages/Home/Gallery';
 import { useEffect, useState } from 'react';
-import { ClipLoader, ClimbingBoxLoader } from "react-spinners";
+import { ClipLoader, ClimbingBoxLoader, CircleLoader } from "react-spinners";
 import loadervideo from "./assets/loader-video-ecell.mp4";
+import { css } from "@emotion/react";
 
 function App() {
   const [loading, setLoading] = useState(false);
 
   const handlePlay = () => {
-    setTimeout(5000);
+    setTimeout(1000);
   }
+
+  let [color, setColor] = useState("#ffffff");
+
+  const override = css`
+  display: block;
+  margin: 50px auto;
+  border-color: white;
+  position: absolute;
+  align-items: center;
+  top: 50px;
+  left: 30%;
+  right: 30%;
+`;
 
   useEffect(() => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 5000);
+    }, 2000);
   }, []);
   
   return (
@@ -36,9 +50,13 @@ function App() {
         loading ?
           // <video className='loader-video' src={loadervideo} autoPlay/>
           // <video autoPlay muted loop id="preloader" src={loadervideo} type="video/mp4" />
-          <video onCanPlay={handlePlay} autoPlay className='loader'>
-            <source src={loadervideo} type="video/mp4"/>
-          </video>
+          // <video onCanPlay={handlePlay} autoPlay className='loader'>
+          //   <source src={loadervideo} type="video/mp4"/>
+          // </video>
+          <>
+          <ClipLoader color={color} loading={loading} css={override} size={150} />
+          <CircleLoader color={color} loading={loading} css={override} size={150} />
+          </>
           :
           <span>
             {/* <ParticleBackground /> */}
