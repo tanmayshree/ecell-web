@@ -15,10 +15,31 @@ import pratnadeepbanik from "./../../assets/ecellimages/pratnadeep-banik.jpeg";
 import srijadas from "./../../assets/ecellimages/banani-das.jpeg";
 import rohitn from "./../../assets/ecellimages/rohit-n.jpeg";
 import triasharoy from "./../../assets/ecellimages/triasha-roy.jpeg";
-import tanmayshree from "./../../assets/ecellimages/tanmay-shree.jpeg";
+import tanmayshree from "./../../assets/ecellimages/tanmay-shree.jpg";
 import rashmitachakraborty from "./../../assets/ecellimages/rashmita-chakraborty.jpg";
 import rakjhushkumar from "./../../assets/ecellimages/rajkhush-kumar.jpg";
+import sumandeb from "./../../assets/ecellimages/suman-deb.jpg";
+import aryanvijaywargia from "./../../assets/ecellimages/aryanvijaywargia.jpeg";
+import bharatsharma from "./../../assets/ecellimages/bharatsharma.png";
+import anubhavray from "./../../assets/ecellimages/anubhavray.jpeg";
+import likhitasurya from "./../../assets/ecellimages/likhita.png";
+import amitkumar from "./../../assets/ecellimages/amitkumar.png";
+import ankitkumar from "./../../assets/ecellimages/ankitkumar.png";
+import sadhnabolla from "./../../assets/ecellimages/sadhanabolla.png";
+import saikrishna from "./../../assets/ecellimages/saikrishna.png";
+import abhijeetpatil from "./../../assets/ecellimages/abhijeetpatil.png";
+import aninditapaul from "./../../assets/ecellimages/aninditapaul.png";
 
+
+export const Faculty_Advisor = [
+    {
+        index: 0,
+        image: sumandeb,
+        name: "Dr. Suman Deb",
+        post: "Chairman & Faculty Advisor",
+        linkdUrl: "#"
+    },
+]
 
 
 export const Executive_Team = [
@@ -33,19 +54,33 @@ export const Executive_Team = [
         index: 1,
         image: img,
         name: "Kartikeya Singh",
-        post: "Member",
+        post: "Chief Coordinator",
         linkdUrl: "https://www.linkedin.com/in/sadhana-bolla/",
     },
     {
         index: 2,
         image: rashmitachakraborty,
         name: "Rashmita Chakraborty",
-        post: "esdfghjk",
+        post: "Operational Head",
         linkdUrl: "https://www.linkedin.com/in/likhitha-surya-sri/",
     },
 ]
 
 export const Design_Team = [
+    {
+        index: -2,
+        image: bharatsharma,
+        name: "Bharat Sharma",
+        post: "Lead",
+        linkdUrl: "https://www.linkedin.com/in/tanmayshree/",
+    },
+    {
+        index: -1,
+        image: anubhavray,
+        name: "Anubhav Ray",
+        post: "Lead",
+        linkdUrl: "https://www.linkedin.com/in/tanmayshree/",
+    },
     {
         index: 0,
         image: tanmayshree,
@@ -70,6 +105,13 @@ export const Design_Team = [
 ]
 
 export const Content_Team = [
+    {
+        index: -1,
+        image: aryanvijaywargia,
+        name: "Aryan Vijaywargia",
+        post: "Lead",
+        linkdUrl: "https://www.linkedin.com/in/tanmayshree/",
+    },
     {
         index: 0,
         image: hemantshankar,
@@ -108,6 +150,13 @@ export const Content_Team = [
 ]
 
 export const Outreach_Team = [
+    {
+        index: -1,
+        image: rashmitachakraborty,
+        name: "Rashmita Chakraborty",
+        post: "Lead",
+        linkdUrl: "https://www.linkedin.com/in/tanmayshree/",
+    },
     {
         index: 0,
         image: dharunshankar,
@@ -157,6 +206,13 @@ export const Alumni_Team = [
 
 export const Finance_Team = [
     {
+        index: -1,
+        image: abhijeetpatil,
+        name: "Abhijeet Patil",
+        post: "Lead",
+        linkdUrl: "https://www.linkedin.com/in/tanmayshree/",
+    },
+    {
         index: 0,
         image: hemantshankar,
         name: "Hemant Shankar",
@@ -181,6 +237,20 @@ export const Finance_Team = [
 
 export const Tech_Team = [
     {
+        index: -1,
+        image: ankitkumar,
+        name: "Ankit Kumar",
+        post: "Lead",
+        linkdUrl: "https://www.linkedin.com/in/tanmayshree/",
+    },
+    {
+        index: -1,
+        image: amitkumar,
+        name: "Amit Kumar",
+        post: "Lead",
+        linkdUrl: "https://www.linkedin.com/in/tanmayshree/",
+    },
+    {
         index: 0,
         image: nababratadeb,
         name: "Nababrata Deb",
@@ -204,6 +274,13 @@ export const Tech_Team = [
 ]
 
 export const Startup_Team = [
+    {
+        index: -1,
+        image: rakjhushkumar,
+        name: "Rajkhush Kumar",
+        post: "Lead",
+        linkdUrl: "https://www.linkedin.com/in/tanmayshree/",
+    },
     {
         index: 0,
         image: rohitn,
@@ -243,6 +320,13 @@ export const Startup_Team = [
 
 export const Events_Team = [
     {
+        index: -1,
+        image: img,
+        name: "Kartikeya Singh",
+        post: "Lead",
+        linkdUrl: "https://www.linkedin.com/in/tanmayshree/",
+    },
+    {
         index: 0,
         image: pranjaltank,
         name: "Pranjal Tank",
@@ -260,6 +344,37 @@ export const Events_Team = [
         index: 2,
         image: mukulkumar,
         name: "Mukul Kumar",
+        post: "Member",
+        linkdUrl: "https://www.linkedin.com/in/mukul-kr/",
+    }
+]
+
+export const Others_Team = [
+    {
+        index: -1,
+        image: saikrishna,
+        name: "Sai Krishna Varanasi",
+        post: "Lead",
+        linkdUrl: "https://www.linkedin.com/in/tanmayshree/",
+    },
+    {
+        index: 0,
+        image: sadhnabolla,
+        name: "Sadhna Bolla",
+        post: "Member",
+        linkdUrl: "https://www.linkedin.com/in/pranjal-tank/",
+    },
+    {
+        index: 1,
+        image: likhitasurya,
+        name: "Likhita Surya Sri Gullam",
+        post: "Member",
+        linkdUrl: "https://www.linkedin.com/in/pratnadeepbanik/",
+    },
+    {
+        index: 2,
+        image: aninditapaul,
+        name: "Anindita Paul",
         post: "Member",
         linkdUrl: "https://www.linkedin.com/in/mukul-kr/",
     }

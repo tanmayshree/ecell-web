@@ -9,7 +9,7 @@ const NavBar = () => {
   const [menu, setMenu] = useState(false);
 
   return (
-    <>
+    <div className="navpage">
       <nav className="navbox">
         <img src={logo} alt="" />
         <div className="links-list">
@@ -120,7 +120,7 @@ const NavBar = () => {
           </NavLink>
         </div>
       </Fade>
-    </>
+    </div>
   );
 };
 

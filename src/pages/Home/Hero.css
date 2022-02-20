@@ -1,0 +1,84 @@
+.hero-page{
+    padding-top: 5rem;
+    color: aliceblue;
+    display: grid;
+    place-items: center;
+    margin-top: 3px;
+    padding-top: 140px;
+    padding-bottom: 140px;
+    /* background: url(./../../assets/herobg4.png) #000; */
+    background:linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(./../../assets/herobg4.png) repeat-x;
+    background-size: contain;
+    height: 58vh;
+    position: relative;
+}
+
+.hero-divider{
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.divider-dash{
+    width: 90%;
+    height: 4px;
+    background: white;
+    display: block;
+}
+.hero-title{
+    font-size: 4rem;
+    margin: 10px auto;
+}
+.hero-subtitle{
+    margin: 10px;
+    font-size: 1.3rem;
+    color: rgb(252, 210, 217);
+}
+
+@media screen and (max-width: 1100px) {
+    .hero-title{
+        font-size: 3.5rem;
+    }
+}
+@media screen and (max-width: 900px) {
+    .hero-title{
+        font-size: 2.8rem;
+    }
+}
+@media screen and (max-width: 700px) {
+    .hero-title{
+        font-size: 2.1rem;
+    }
+    .hero-divider{
+        font-size: 12px;
+    }
+    .divider-dash{
+        height: 2px;
+        width: 78%;
+    }
+    .hero-subtitle{
+        font-size: 1rem;
+    }
+}
+@media screen and (max-width: 500px) {
+    .hero-page{
+        padding-top: 80px;
+        padding-bottom: 50px;
+        height: 35vh;
+    }
+    .hero-title{
+        font-size: 1.5rem;
+        width: 80%;
+        line-height: 30px;
+    }
+    .hero-divider{
+        font-size: 12px;
+    }
+    .divider-dash{
+        height: 2px;
+    }
+    .hero-subtitle{
+        font-size: 0.85rem;
+    }
+}
+

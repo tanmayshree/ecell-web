@@ -10,21 +10,53 @@ import EventsTimeLine from "./pages/Home/EventsTimeLine";
 import Testimonials from './pages/Home/Testimonials';
 import PastEvents from './pages/Home/PastEvents';
 import ParticleBackground from './components/particleBackground';
+import TeamArchives from './pages/Home/Archives';
+import GalleryPage from './pages/Home/Gallery';
+import { useEffect, useState } from 'react';
+import { ClipLoader, ClimbingBoxLoader } from "react-spinners";
+import loadervideo from "./assets/loader-video-ecell.mp4";
 
 function App() {
+  const [loading, setLoading] = useState(false);
+
+  const handlePlay = () => {
+    setTimeout(5000);
+  }
+
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 5000);
+  }, []);
+  
   return (
     <div className="App">
-      <ParticleBackground />
-      <NavBar />
-      <Routes>
-        <Route path="/" exact element={<Home />} />
-        <Route path="/team" exact element={<Team />} />
-        <Route path="/events" exact element={<><EventsTimeLine /> <PastEvents /></>} />
-        <Route path="/testimonials" exact element={<Testimonials />} />
-        <Route path="/contact-us" exact element={<Contact />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-      <Footer />
+      {
+        loading ?
+          // <video className='loader-video' src={loadervideo} autoPlay/>
+          // <video autoPlay muted loop id="preloader" src={loadervideo} type="video/mp4" />
+          <video onCanPlay={handlePlay} autoPlay className='loader'>
+            <source src={loadervideo} type="video/mp4"/>
+          </video>
+          :
+          <span>
+            {/* <ParticleBackground /> */}
+            <NavBar />
+            <Routes>
+              <Route path="/" exact element={<Home />} />
+              <Route path="/team" exact element={<Team />} />
+              <Route path="/gallery" exact element={<GalleryPage />} />
+              <Route path="/team/archives" exact element={<TeamArchives />} />
+              <Route path="/events" exact element={<><EventsTimeLine /> <PastEvents /></>} />
+              <Route path="/testimonials" exact element={<Testimonials />} />
+              <Route path="/contact-us" exact element={<Contact />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+            <Footer />
+          </span>
+      }
+
     </div>
   );
 }

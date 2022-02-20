@@ -7,10 +7,15 @@
 .group-set {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  place-items: center;
   gap: 45px 0;
   margin: 40px 12%;
   font-family: "Josefin Sans", sans-serif;
   max-width: 1200px;
+}
+.faculty-set{
+  margin: 40px 37%;
+  justify-content: center;
 }
 
 h3,
@@ -28,7 +33,9 @@ h4 {
   border: 4px white solid;
   position: relative;
 }
-
+.card-wrapper:hover{
+  transform: scale(1.03);
+}
 .card-wrapper img {
   width: 100%;
   height: 100%;
@@ -55,11 +62,27 @@ h4 {
   text-shadow: 1px 1px 10px black;
 }
 
+.archives-link{
+  background: rgb(203, 240, 255);
+  width: 220px;
+  margin: 20px auto;
+  padding: 10px;
+  border-radius: 18px;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: black;
+}
+.archives-link:hover{
+  box-shadow: 0 0 5px 2px white;
+}
+
 @media screen and (max-width: 1200px) {
   .group-set {
     margin: 30px 8%;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-
+  }
+  .faculty-set{
+    margin: 40px 35%;
   }
   .card-wrapper {
     margin: 0 30px;
@@ -84,6 +107,9 @@ h4 {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 
   }
+  .faculty-set{
+    margin: 40px 35%;
+  }
   .card-wrapper {
     margin: 0 10px;
     font-size: 90%;
@@ -93,6 +119,11 @@ h4 {
   }
 }
 
+@media screen and (max-width: 770px){
+  .faculty-set{
+    margin: 40px 30%;
+  }
+}
 @media screen and (max-width: 600px) {
   .group-set {
     display: flex;
