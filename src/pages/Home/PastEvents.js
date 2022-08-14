@@ -10,7 +10,14 @@ const PastEvents = () => {
       {
         PastEventsData.map((Events) => {
           return (
-            <div className="events-wrapper" key={Events.index}>
+            <div className="events-wrapper" key={Events.index}
+              data-aos="fade-up"
+              data-aos-delay="50"
+              data-aos-duration="1000"
+              data-aos-easing="ease-in-out"
+              data-aos-mirror="true"
+              data-aos-once="false"
+              data-aos-anchor-placement="top-center">
               <img className="events-image" src={Event} alt="" />
               <div className="events-details">
                 <div className="events-content">

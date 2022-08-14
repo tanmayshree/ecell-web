@@ -34,6 +34,9 @@
 }
 
 @media screen and (max-width: 800px){
+    .about-page{
+        padding-bottom: 10px;
+    }
     .about-wrapper{
         flex-direction: column-reverse;
         gap: 10px;

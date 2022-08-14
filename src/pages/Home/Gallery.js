@@ -7,7 +7,7 @@ const GalleryPage = () => {
     return ( 
       <div style={{marginTop: "150px"}} className='gallery-page'>
       <Section_Title title={"Gallery"} />
-      <div className='gallery-wrapper'>
+      <div className='gallery-wrapper'z>
       <Gallery images={IMAGES} enableImageSelection={false} enableKeyboardInput={true} onClickImage={{}} margin={7.5} backdropClosesModal={true}/>
     </div>
     </div>

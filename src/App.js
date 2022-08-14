@@ -16,9 +16,12 @@ import { useEffect, useState } from 'react';
 import { ClipLoader, ClimbingBoxLoader, CircleLoader } from "react-spinners";
 import loadervideo from "./assets/loader-video-ecell.mp4";
 import { css } from "@emotion/react";
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
-function App() {
+function App() {  
   const [loading, setLoading] = useState(false);
+  Aos.init();
 
   const handlePlay = () => {
     setTimeout(1000);
@@ -46,6 +49,7 @@ function App() {
   
   return (
     <div className="App">
+      
       {
         loading ?
           // <video className='loader-video' src={loadervideo} autoPlay/>

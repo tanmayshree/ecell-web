@@ -33,6 +33,7 @@
     margin: 10px;
     font-size: 1.3rem;
     color: rgb(252, 210, 217);
+    color: #FFE5B4;
 }
 
 @media screen and (max-width: 1100px) {
@@ -62,9 +63,9 @@
 }
 @media screen and (max-width: 500px) {
     .hero-page{
-        padding-top: 80px;
-        padding-bottom: 50px;
-        height: 35vh;
+        padding-top: 100px;
+        padding-bottom: 30px;
+        height: 25vh;
     }
     .hero-title{
         font-size: 1.5rem;

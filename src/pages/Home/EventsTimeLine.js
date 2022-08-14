@@ -7,8 +7,8 @@ const EventsTimeLine = () => {
   return (
     <div style={{marginTop: "150px"}} className='upcoming-events-page'>
       <Section_Title title={"Upcoming Events"} />
-      <p>There are no upcoming events. <br />Keep visiting the website to stay updated.</p>
-      {/* <VerticalTimeline>
+      {/* <p>There are no upcoming events. <br />Keep visiting the website to stay updated.</p> */}
+      <VerticalTimeline>
         <VerticalTimelineElement
       
           contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
@@ -93,7 +93,7 @@ const EventsTimeLine = () => {
         <VerticalTimelineElement
           iconStyle={{ background: 'rgb(16, 204, 82)', color: '#fff' }}
         />
-      </VerticalTimeline> */}
+      </VerticalTimeline>
     </div>
   );
 }

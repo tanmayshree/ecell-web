@@ -2,7 +2,13 @@ import "./Title.css";
 
 const Section_Title = ({ title }) => {
   return (
-    <>
+    <div data-aos="fade"
+    data-aos-delay="50"
+    data-aos-duration="500"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="bottom-bottom">
       <div className="section-title-box">
           <svg
             viewBox="0 0 45 45"
@@ -39,7 +45,7 @@ const Section_Title = ({ title }) => {
           fill="white"
         />
       </svg>
-    </>
+    </div>
   );
 };
 

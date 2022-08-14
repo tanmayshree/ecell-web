@@ -9,7 +9,17 @@ const NavBar = () => {
   const [menu, setMenu] = useState(false);
 
   return (
-    <div className="navpage">
+    <div
+      className="navpage"
+      data-aos="fade-down"
+      data-aos-offset="200"
+      data-aos-delay="50"
+      data-aos-duration="1000"
+      data-aos-easing="ease-in-out"
+      data-aos-mirror="true"
+      data-aos-once="false"
+      data-aos-anchor-placement="top-center"
+    >
       <nav className="navbox">
         <img src={logo} alt="" />
         <div className="links-list">

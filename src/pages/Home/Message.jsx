@@ -6,8 +6,17 @@ import rajkhushkumar from "./../../assets/ecellimages/rajkhush-kumar-1.jpg";
 
 export default function Message() {
   return (
-    <div className="message-page">
-      {/* <Section_Title title={"Our Faculty Advisor"} />
+    <div
+      className="message-page"
+      data-aos="fade"
+      data-aos-delay="50"
+      data-aos-duration="1000"
+      data-aos-easing="ease-in-out"
+      data-aos-mirror="true"
+      data-aos-once="false"
+      data-aos-anchor-placement="top-center"
+    >
+      <Section_Title title={"Our Faculty Advisor"} />
       <div className="message-wrapper">
         <div className="message-faculty">
           <img src={sumandeb} alt="" />
@@ -29,15 +38,15 @@ export default function Message() {
             adipisicing elit. Soluta, vero.
           </p>
         </div>
-      </div> */}
+      </div>
 
       <Section_Title title={"Presidential Note"} />
       <div className="message-wrapper">
         <div className="message-faculty">
           <img src={rajkhushkumar} alt="" />
           <p className="faculty-name">Rajkhush Kumar</p>
-          <p className="faculty-desgn">President</p>
-          <p className="faculty-desgn">E-Cell</p>
+          <p className="faculty-desgn">President, E-Cell</p>
+          {/* <p className="faculty-desgn">E-Cell</p> */}
         </div>
         <div className="message-content">
           <p className="message">
