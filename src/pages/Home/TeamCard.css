@@ -32,6 +32,7 @@ h4 {
   margin: 0 30px;
   border: 4px white solid;
   position: relative;
+  background: rgba(0, 0, 0, 0.4);
 }
 .card-wrapper:hover{
   transform: scale(1.03);
@@ -131,7 +132,7 @@ h4 {
     align-items: center;
     margin: 30px auto;
     row-gap: 20px;
-    max-width: 400px;
+    max-width: 350px;
   }
 
   /* .card-wrapper {

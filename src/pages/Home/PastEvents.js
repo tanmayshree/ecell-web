@@ -1,12 +1,14 @@
 import './PastEvents.css'
+import React from "react";
+
 import Event from "./../../assets/Past Events/Vector.png";
-import Speaker from "./../../assets/Past Events/Speaker-1.png";
-import Section_Title from '../../components/Title';
+// import Speaker from "./../../assets/Past Events/Speaker-1.png";
+import SectionTitle from '../../components/Title';
 import { PastEventsData } from './PastEventsData';
 const PastEvents = () => {
   return (
     <>
-      <Section_Title title={"Past Events"} />
+      <SectionTitle title={"Past Events"} />
       {
         PastEventsData.map((Events) => {
           return (
@@ -21,7 +23,7 @@ const PastEvents = () => {
               <img className="events-image" src={Event} alt="" />
               <div className="events-details">
                 <div className="events-content">
-                  <h3 className="events-title">{Events.title} <a href={Events.ytlink} target="_blank"><i className="fa-brands fa-youtube" /></a></h3>
+                  <h3 className="events-title">{Events.title} <a href={Events.ytlink} target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-youtube" /></a></h3>
                   <h4 className="events-date-time">
                     <i className="fa-solid fa-calendar-minus" />&nbsp;
                     {Events.date}

@@ -1,6 +1,6 @@
-import Gallery from 'react-grid-gallery';
+import React from "react";
+
 import './Testimonials.css'
-import { IMAGES } from './TestimonialsData';
 const Testimonials = () => {
   return (
     <div style={{marginTop: "150px"}} className='testimonial-wrapper'>

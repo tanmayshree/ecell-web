@@ -1,21 +1,22 @@
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-import Section_Title from '../../components/Title';
+import SectionTitle from '../../components/Title';
 import './EventsTimeLine.css'
+import React from "react";
 
 const EventsTimeLine = () => {
   return (
-    <div style={{marginTop: "150px"}} className='upcoming-events-page'>
-      <Section_Title title={"Upcoming Events"} />
+    <div style={{ marginTop: "150px" }} className='upcoming-events-page'>
+      <SectionTitle title={"Upcoming Events"} />
       {/* <p>There are no upcoming events. <br />Keep visiting the website to stay updated.</p> */}
       <VerticalTimeline>
         <VerticalTimelineElement
-      
+
           contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
           contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
           date="2011 - present"
           iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-      
+
         >
           <h3 className="vertical-timeline-element-title">Creative Director</h3>
           <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
@@ -24,7 +25,7 @@ const EventsTimeLine = () => {
           </p>
         </VerticalTimelineElement>
         <VerticalTimelineElement
-      
+
           contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
           date="2010 - 2011"
           iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
@@ -36,7 +37,7 @@ const EventsTimeLine = () => {
           </p>
         </VerticalTimelineElement>
         <VerticalTimelineElement
-      
+
           date="2008 - 2010"
           iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
         >
@@ -47,7 +48,7 @@ const EventsTimeLine = () => {
           </p>
         </VerticalTimelineElement>
         <VerticalTimelineElement
-      
+
           date="2006 - 2008"
           iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
         >
@@ -58,7 +59,7 @@ const EventsTimeLine = () => {
           </p>
         </VerticalTimelineElement>
         <VerticalTimelineElement
-      
+
           date="April 2013"
           iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
         >
@@ -69,7 +70,7 @@ const EventsTimeLine = () => {
           </p>
         </VerticalTimelineElement>
         <VerticalTimelineElement
-      
+
           date="November 2012"
           iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
         >
@@ -80,7 +81,7 @@ const EventsTimeLine = () => {
           </p>
         </VerticalTimelineElement>
         <VerticalTimelineElement
-      
+
           date="2002 - 2006"
           iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
         >

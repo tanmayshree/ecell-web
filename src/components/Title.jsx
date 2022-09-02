@@ -1,13 +1,14 @@
 import "./Title.css";
+import React from "react";
 
-const Section_Title = ({ title }) => {
+const SectionTitle = ({ title }) => {
   return (
     <div>
       <div className="section-title-box">
-          <span className="section-title">{title}</span>
+        <span className="section-title">{title}</span>
       </div>
     </div>
   );
 };
 
-export default Section_Title;
+export default SectionTitle;

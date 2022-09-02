@@ -1,9 +1,11 @@
-import Section_Title from '../../components/Title';
+import SectionTitle from '../../components/Title';
 import './Contact.css'
+import React from "react";
+
 const Contact = () => {
   return (
     <div style={{marginTop: "150px"}} className='contact-page'>
-      <Section_Title title={"Contact Us"} />
+      <SectionTitle title={"Contact Us"} />
       <div className="contact-persons">
         <div className="contact-person">
           <h4 className='contact-name'>Rajkhush Kumar</h4>

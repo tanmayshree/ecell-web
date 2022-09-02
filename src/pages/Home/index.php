@@ -589,8 +589,8 @@ function get_file($path, $resize = false){
     // requirements with diagnostics / only check $mime if $mime detected
     if($mime && strtok($mime, '/') !== 'video') error('<strong>' . basename($path) . '</strong> (' . $mime . ') is not a video.', 415);
     foreach (array('video_thumbs', 'load_images', 'image_resize_cache', 'video_ffmpeg_path') as $key) if(empty(config::$config[$key])) error($key . ' option disabled.', 400);
-    if(!function_exists('exec')) error('PHP <a href="https://www.php.net/manual/en/function.exec.php" target="_blank">exec()</a> function is disabled on this server.', 400);
-    if(empty(exec('type -P ' . config::$config['video_ffmpeg_path']))) error('Can\'t find <a href="http://ffmpeg.org/" target="_blank">FFmpeg</a> in location "' . config::$config['video_ffmpeg_path'] . '".', 400);
+    if(!function_exists('exec')) error('PHP <a href="https://www.php.net/manual/en/function.exec.php" target="_blank" rel="noopener noreferrer">exec()</a> function is disabled on this server.', 400);
+    if(empty(exec('type -P ' . config::$config['video_ffmpeg_path']))) error('Can\'t find <a href="http://ffmpeg.org/" target="_blank" rel="noopener noreferrer">FFmpeg</a> in location "' . config::$config['video_ffmpeg_path'] . '".', 400);
 
     // get cache path
     $cache = get_image_cache_path($path, 480, filesize($path), filemtime($path));

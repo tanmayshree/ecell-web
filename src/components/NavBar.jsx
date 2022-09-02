@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Fade } from "react-reveal";
 import RubberBand from "react-reveal/RubberBand";
 import { NavLink } from "react-router-dom";
-
+import React from "react";
 const NavBar = () => {
   const [menu, setMenu] = useState(false);
 

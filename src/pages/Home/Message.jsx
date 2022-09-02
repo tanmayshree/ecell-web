@@ -1,5 +1,5 @@
 import React from "react";
-import Section_Title from "../../components/Title";
+import SectionTitle from "../../components/Title";
 import "./Message.css";
 import sumandeb from "./../../assets/ecellimages/suman-deb.png";
 import rajkhushkumar from "./../../assets/ecellimages/rajkhush-kumar-1.jpg";
@@ -16,7 +16,7 @@ export default function Message() {
       data-aos-once="false"
       data-aos-anchor-placement="top-center"
     >
-      <Section_Title title={"Our Faculty Advisor"} />
+      <SectionTitle title={"Our Faculty Advisor"} />
       <div className="message-wrapper">
         <div className="message-faculty">
           <img src={sumandeb} alt="" />
@@ -40,7 +40,7 @@ export default function Message() {
         </div>
       </div>
 
-      <Section_Title title={"Presidential Note"} />
+      <SectionTitle title={"Presidential Note"} />
       <div className="message-wrapper">
         <div className="message-faculty">
           <img src={rajkhushkumar} alt="" />
