@@ -3,7 +3,8 @@
 .navpage{
     position: fixed;
     width: 100%;
-    background: #000;
+    background: rgba(0, 0, 0);
+    /* background-image: url(./../assets/wallpaper-3.1.jpg); */
     z-index: 9999;
     /* margin-top: -3px; */
     top: 0;
@@ -43,7 +44,8 @@ li:hover, li:focus, li:visited{
 }
 .mobile-nav{
     /* background: url(./../../public/1397050.webp); */
-    background: #000;
+    background: rgba(0, 0, 0);
+    /* background-image: url(./../assets/wallpaper-3.1.jpg); */
     display: flex;
     height: 3rem;
     padding: 20px;

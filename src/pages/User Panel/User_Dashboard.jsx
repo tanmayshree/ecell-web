@@ -1,55 +1,168 @@
-import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
-import React from "react";
+import { Button, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
+import React, { useState } from "react";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
-function createData(sl_no, timestamp, feedback, validation_status) {
-  return { sl_no, timestamp, feedback, validation_status };
-}
+// function createData(sl_no, timestamp, feedback, validation_status) {
+//   return { sl_no, timestamp, feedback, validation_status };
+// }
 
-useEffect(() => {
-  
-})
-
-const rows = [
-  createData(1, "25/02/24 05:02:54", "hvjb lorevsjjcac  fievdiuhveusuviusvsiud viu bs  usfh soifh ius siu sud fsug fcusdv dsgvsbv usddoiwhof qfu foifhEOF UGE fuESHsLOa wp afhpaf  pojehi  p  esiehhe", "Pending"),
-  createData(2, "25/02/24 05:02:54", "hvjb lorevsjjcac  fievdiuhveusuviusvsiud viu bs  usfh soifh ius siu sud fsug fcusdv dsgvsbv usddoiwhof qfu foifhEOF UGE fuESHsLOa wp afhpaf  pojehi  p  esiehhe", "Pending"),
-];
 
 const UserDashboard = () => {
-  return (
-    <div className="dashboard_wrapper">
-      <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+  const [row, setRow] = useState([]);
+  // var rows = [];
+  let navigate_to = useNavigate();
 
-          <TableHead>
-            <TableRow>
-              <TableCell>Sl. No.</TableCell>
-              <TableCell>Timestamp</TableCell>
-              <TableCell>Feedback</TableCell>
-              <TableCell>Validation Status</TableCell>
-            </TableRow>
-          </TableHead>
+  const [dashboardData, setDashboardData] = React.useState(false);
 
-          <TableBody>
-            {rows.map((row) => (
-              <TableRow
-                key={row.sl_no}
-                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-              >
-                <TableCell component="th" scope="row">
-                  {row.sl_no}
-                </TableCell>
-                <TableCell align="left">{row.timestamp}</TableCell>
-                <TableCell align="left">{row.feedback}</TableCell>
-                <TableCell align="left">{row.validation_status}</TableCell>
+  const handleLogout = async (event) => {
+    event.preventDefault();
+    const jwt_token = localStorage.getItem('jwt_token')
+    if (jwt_token) {
+      const url = "https://backend-ecell.herokuapp.com/logout"
+      const init_ob = {
+        method: "GET",
+        mode: 'cors',
+      }
+      await fetch(url, init_ob)
+      localStorage.removeItem('jwt_token')
+      navigate_to("/testimonials");
+      console.log("Succesfully Logged Out")
+    }
+    else {
+      console.log("You are not logged in 01.")
+    }
+  }
+
+  const getData = async () => {
+    console.log("randobhj");
+    const jwt_token = localStorage.getItem('jwt_token')
+    if (jwt_token) {
+      const url = "https://backend-ecell.herokuapp.com/api/userValidation";
+      const init_ob = {
+        method: "GET",
+        mode: "cors",
+        headers: {
+          "jwt-token": jwt_token,
+          'Access-Control-Allow-Origin': '*'
+        },
+      };
+      const res1 = await fetch(url, init_ob);
+      if (res1 && res1.ok) {
+        res1.json().catch(() => {
+          navigate_to("/")
+          console.log("You are not logged in 07.")
+          localStorage.removeItem('jwt_token')
+          // Add navigate option
+        }
+        )
+        const url1 = "https://backend-ecell.herokuapp.com/api/get/userDashboard";
+        const init_ob1 = {
+          method: "GET",
+          mode: "cors",
+          headers: {
+            "jwt-token": jwt_token,
+            'Access-Control-Allow-Origin': '*'
+          },
+        };
+        const res2 = await fetch(url1, init_ob1);
+        res2.json().then((d) => {
+
+          setRow(d);
+          console.log(row);
+          setDashboardData(true);
+        })
+        /*
+                fetch(url1, init_ob1)
+                  .then(response => { return (response.json()) })
+                  .then((data) => {
+                    setRow(data);
+                    console.log(data);
+                    setDashboardData(true);
+                  })
+                  */
+      }
+      else {
+        navigate_to("/")
+        console.log("You are not logged in 02.")
+      }
+    }
+    else {
+      navigate_to("/")
+      console.log("You are not logged in05.")
+    }
+  }
+  useEffect(() => {
+    getData()
+  }, []);
+
+  if (dashboardData) {
+    return (
+      <div className="dashboard_wrapper">
+        <Button type="submit" color="warning" variant="contained" onClick={handleLogout}>Logout</Button>&nbsp;&nbsp;
+        <Button type="submit" color="warning" variant="contained" onClick={() => navigate_to("/add-testimonial")}>Add Feedback</Button>
+        <br /><br /><br />
+        <TableContainer component={Paper}>
+          <Table sx={{ minWidth: 650 }} aria-label="simple table">
+
+            <TableHead>
+              <TableRow>
+                <TableCell>Sl. No.</TableCell>
+                <TableCell>Timestamp</TableCell>
+                <TableCell>Feedback</TableCell>
+                <TableCell>Validation Status</TableCell>
               </TableRow>
-            ))}
-          </TableBody>
+            </TableHead>
 
-        </Table>
-      </TableContainer>
-    </div>
-  );
+            <TableBody>
+              {row.map((row, index) => (
+                <TableRow
+                  key={index}
+                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                >
+                  <TableCell component="th" scope="row">
+                    {index + 1}
+                  </TableCell>
+                  <TableCell align="left">{row.timestamp}</TableCell>
+                  <TableCell align="left">{row.feedback}</TableCell>
+                  <TableCell align="left">{row.validation_status}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </div>
+    );
+  }
+  else
+    return (
+      <div className="dashboard_wrapper">
+        <TableContainer component={Paper}>
+          <Table sx={{ minWidth: 650 }} aria-label="simple table">
+
+            <TableHead>
+              <TableRow>
+                <TableCell>Sl. No.</TableCell>
+                <TableCell>Timestamp</TableCell>
+                <TableCell>Feedback</TableCell>
+                <TableCell>Validation Status</TableCell>
+              </TableRow>
+            </TableHead>
+
+            <TableBody>
+              <TableRow>
+                <TableCell>Loading.</TableCell>
+                <TableCell>Loading.</TableCell>
+                <TableCell>Loading.</TableCell>
+                <TableCell>Loading.</TableCell>
+              </TableRow>
+            </TableBody>
+
+
+          </Table>
+        </TableContainer>
+      </div>
+    );
 };
 
 export default UserDashboard;
